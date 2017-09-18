@@ -45,7 +45,7 @@ class EmailObject(object):
       if len(part) == 0:
         continue
       if isinstance(part, bytes):
-        decoded_parts.append(part.decode('utf-8'))
+        decoded_parts.append(part.decode("ISO-8859-1"))
       else:
         decoded_parts.append(part)
     return self.CLRF.join(decoded_parts)
