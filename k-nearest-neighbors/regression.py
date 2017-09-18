@@ -70,7 +70,9 @@ class RegressionTest(object):
     houses = houses.drop('AppraisedValue', 1)
     houses = (houses - houses.mean()) / (houses.max() - houses.min())
     self.houses = houses
+    # print(houses) # figure out what data are available
     self.houses = self.houses[['lat', 'long', 'SqFtLot']]
+    # self.houses = self.houses[['lat', 'long', 'SqFtLot', 'DevelopmentRightsPurch']] # this is me messing around
 
   def plot_error_rates(self):
     """

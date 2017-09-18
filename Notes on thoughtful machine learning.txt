@@ -1,0 +1,36 @@
+KNN
+
+Notes:
+Overcame 'curse of dimensionality' by selecting three features within the data-
+lat, long, and the square footage of the lot. This cuts down on the dimensions.
+This uses Euclidian distance between houses. 
+
+In trying to toy with this - the data have other interesting attributes, but
+the values for those appear to only be at most three values. However I did
+select 'DevelopmentRightsPurch' to include in the data to test and it seems to
+make the minimum mean absolute distance take longer - more than 4 folds in order
+to fall below 100k.
+
+Summary of Use: Use this to predict a value based on a few key attributes 
+shared by some surrounding values. In this case, 'surrounding' is 
+determined by Euclidian distance.
+
+
+Naive Bayes classifier
+
+Notes: I had to change the encoding string used. Other than that, it seems to 
+work as advertised.
+The crossvalidate.py file does two folds and ultimately the spam trainer and 
+the author go with the model from the fold that minimizes false positives so 
+that email messages are not incorrectly lost, favoring letting a small amount 
+of spam through instead.
+
+Summary of Use: Use this to classify when the inputs are independent of one 
+another. Uses a probability score to classify data in multiple directions. The 
+Bayesian part comes in while classifying things - it ignores the probability of
+multiple attributes or dimensions occurring together and simply calculates the 
+individual probabilities. This is easier to compute. 
+It also assumes for the sake of new information, that any given attribute of 
+interest has 1/n probability of occurring, where n is number of attributes.
+This ensures that with new information, the probabilities are still able to be 
+calculated.
