@@ -34,3 +34,19 @@ It also assumes for the sake of new information, that any given attribute of
 interest has 1/n probability of occurring, where n is number of attributes.
 This ensures that with new information, the probabilities are still able to be 
 calculated.
+
+
+Decision trees
+
+Notes: To be honest the output of the cross_validate.py is not intuitive.
+
+Summary of Uses:
+This chapter used three techniques for splitting the data into sub categories.
+Information Gain - a measure of entropy, GINI impurity - A measure of an 
+attribute being mistakenly identified, and variance reduction - a way of 
+reducing dispersion of the classification - through pruning. There are two 
+techniques the book discusses for pruning - bagging and random forests. The 
+sample code uses confusion matrices to validate the decision tree, regression, 
+and random forest. Random forests fit to sub-samples of the data and uses 
+averaging to find the best categories to use to fit a model to. In this way,
+the technique can avoid overfitting.
