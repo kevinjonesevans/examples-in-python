@@ -36,9 +36,11 @@ This ensures that with new information, the probabilities are still able to be
 calculated.
 
 
-Decision trees
+Decision trees/Random Forests
 
-Notes: To be honest the output of the cross_validate.py is not intuitive.
+Notes: To be honest the output of the cross_validate.py is not intuitive. It 
+prints out the output of 'validate' which is the aggregation of all the 
+confusion matrices. So, I assume looking at those values, and the m
 
 Summary of Uses:
 This chapter used three techniques for splitting the data into sub categories.
@@ -50,3 +52,23 @@ sample code uses confusion matrices to validate the decision tree, regression,
 and random forest. Random forests fit to sub-samples of the data and uses 
 averaging to find the best categories to use to fit a model to. In this way,
 the technique can avoid overfitting.
+
+Hidden Markov Models
+
+Notes: None of the tests seem to work :(.
+
+Summary of Uses: 
+There are three stages of using HMM are evaluation, decoding, and learning.
+Evaluation is done in the book using the forward-backward algorithm. This is 
+basically the process of asking how probable a hidden state is given 
+several observations. Decoding is the process of asking what the most likely 
+state sequence is given a sequence of observations. Learning is the actual 
+prediction part of the algorithm. Given the output of the previous two steps,
+i.e. the set of highly probable states, and sequences to those states, what is 
+the most likely thing to occur in the future. We do this by figuring out the 
+most probable next observation and the most probable next state.
+Does not rely on a large amount of historical data. Can be used to predict 
+changes over time in a model.
+Relies on knowing all the states and probabilities of transitions between the 
+states. The Markov assumption is that the probability of all the future states 
+only relies on the present state and not on past states. 
